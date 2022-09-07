@@ -1,13 +1,16 @@
 import styles from '../styles/Card.module.css'
 
 
-const SingleCard = ({card}) => {
+const SingleCard = ({card, handleChoice}) => {
+    const handleClick = () => {
+        handleChoice(card)
+    }
     return ( 
         
                 <div className={styles.card}>
                     <div>
                         <img className={styles.frontCover} src={card.src} alt="card front" />
-                        <img className={styles.backCover} src="./cards/Card_Back.png" alt="card back"/>
+                        <img className={styles.backCover} src="./cards/Card_Back.png" onClick={handleClick} alt="card back"/>
                         </div>
                         </div>
                 
