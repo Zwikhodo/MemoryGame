@@ -2,9 +2,15 @@
     display: block;
     width: 150px;
     padding: 8px 0;
-    margin: 20px auto;
+    margin: 12px auto;
     background: #4979ff;
     border-radius: 4px;
     color: white;
     text-align: center;
   }
+.cardGrid{
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+    grid-gap: 19px;
+}

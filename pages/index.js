@@ -12,7 +12,7 @@ export default function Home() {
 
     <div>
       <h1 className={styles.title}>Memory</h1>
-      <p>are you ready to limbo</p>
+      <p>are you ready to play</p>
       <div className={styles.avatarIcons}>
         
     </div>

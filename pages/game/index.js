@@ -2,6 +2,7 @@ import styles from '../../styles/Game.module.css'
 import Link from 'next/link';
 import { GiCard10Clubs } from "react-icons/gi";
 import { useEffect, useState } from "react"
+import SingleCard from '../../Components/SingleCard';
 
 const flipCards = [
     { "src": "./cards/A.png" },
@@ -81,18 +82,14 @@ const Game = () => {
     console.log(cardsChosen,points)
     return ( 
         <div className={styles.Game}>
+        <button className={styles.btn} onClick={shuffleCards}>Restart Game</button>
             <h1>Memory</h1>
-            <button className={styles.btn} onClick={shuffleCards}>Restart Game</button>
+            
 
             <div className={styles.cardGrid}>
                 {cardsChosen.map(card =>(
-                <div className={styles.card}
-                key ={card.id}>
-                    <div>
-                        <img className={styles.frontCover} src={card.src} alt="card front" />
-                        <img className={styles.backCover} src="./cards/Card_Back.png" alt="card back"/>
-                        </div>
-                        </div>
+                <SingleCard key ={card.id} card = {card}/>
+                    
                 ))}
             </div>
         </div>
