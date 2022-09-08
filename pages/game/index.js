@@ -67,6 +67,10 @@ const Game = () => {
   const [card1, setCard1] = useState(null)
   const [card2, setCard2] = useState(null)
   const [points, setPoints] = useState(0);
+  const [winner, setWinner] = useState ('')
+  const [player1, setPlayer1] = useState ([])
+  const [player2, setPlayer2] = useState ([])
+  const [turn, setTurn] = useState ('')
 
   const shuffleCards = () => {
     const shuffledCards = [...flipCards]
@@ -115,7 +119,7 @@ const Game = () => {
   return (
     <div className={styles.Game}>
       <button className={styles.btn} onClick={shuffleCards}>
-        Restart Game
+        Start Game
       </button>
       <div className={styles.player1}>
         <Image

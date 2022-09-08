@@ -1,23 +1,18 @@
-.title{
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    
 
-}
 .container{
-    box-sizing: border-box;
-    position: relative;
-    width: 550px;
-    height: 500px;
-    padding: 12px;
-    border-radius: 8px;
-background-image: url(../public/confetti.png);
+    margin: auto;
+    margin-bottom:190px ;
+    width: 50%;
+    padding: 15px;
+    text-align: center;
+    top: 0px;
+
 
 }
 .victory{
-    display: grid;
-   justify-content: center;
+    position: relative;
+    bottom:10px ;
+    left: 40px;
 
     
 
@@ -29,12 +24,13 @@ width: 535px;
 height: 100px;
 background:#FFFFFF;
 border-radius: 7px;
-bottom: 50px;
+bottom: 207px;
 
 
 }
 .scoreBoard2{
-    
+    position: relative;
+    top: 20px;
     width: 535px;
     height: 101.37px;
     background: linear-gradient(92.15deg, #FFD975 35.31%, #FFFFFF 135.61%);
@@ -43,16 +39,16 @@ bottom: 50px;
     
 }
 .btn{
+position: relative;
+top: 160px;
+left: 19px;
 padding: 20px;
 width: 164px;
 height: 56px;
-background: #A7DAFF;
+background: #609cc7;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
 border-radius: 8px;
 font-size: large;
 
-}
-.btn_container{
-    top: 120px;
 }
 

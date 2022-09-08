@@ -4,18 +4,16 @@ import Image from 'next/image';
 import styles from "../styles/Layout.module.css";
 const About = () => {
   return (
-    <div className={styles.title}>
-
-      < h2>Well Done!</h2>
+    <div className={styles.container}>
+      <h2>Well Done!</h2>
       <h1>Player 1</h1>
-     <div className={styles.container}>
-      
-
       <Image
           className={styles.victory}
           src="/done.png"
           width={160}
           height={148}
+          position='relative'
+          
         />
         <div className={styles.scoreBoard1}>
           we are trying
@@ -30,7 +28,7 @@ const About = () => {
         
         </div>
         </div>
-    </div>
+    
 
      
      

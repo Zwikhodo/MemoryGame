@@ -7,6 +7,9 @@
   color: #777;
 }
 .btn {
+  position: relative;
+  top: 40px;
+  right:20px;
   display: block;
   width: 150px;
   padding: 8px 0;
@@ -17,18 +20,19 @@
   text-align: center;
 }
 
-/* .avatar1{
+.avatar_container1{
+  position: relative;
+  margin: auto;
+  padding: 40px;
+  left: 123px;
   
 }
-
-.avatar2{
-
-} */
 .avatarInput{
-  margin: auto;
-    
+  position: relative;
+  top: 40px;
+  right: 160px;
   padding: 5px;
   border-radius: 6px;
-
   
 }
+

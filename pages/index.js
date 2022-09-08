@@ -15,7 +15,7 @@ export default function Home() {
         <h1 className={styles.title}>Are you ready to play?</h1>
       </div>
 
-      <div>
+      <div className={styles.avatar_container1}>
         <Image
           className={styles.avatar1}
           src="/log4.png"
@@ -23,8 +23,7 @@ export default function Home() {
           height={178}
         />
         <input className={styles.avatarInput} placeholder="Enter Player One's Name"/>
-        </div>
-        <div>
+        
         <Image
           className={styles.avatar2}
           src="/log2.png"
@@ -32,11 +31,11 @@ export default function Home() {
           height={148}
         />
         <input className={styles.avatarInput} placeholder="Enter Player Two's Name" />
-
+        </div>
         <Link href="/game">
           <a className={styles.btn}>Let's Play</a>
         </Link>
-      </div>
+      
     </>
   );
 }
