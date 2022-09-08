@@ -1,3 +1,5 @@
+
+
 .card{
     position: relative;
 }
@@ -7,4 +9,12 @@
     display:block;
     border-radius: 1px;
     border: 1px solid;
+}
+
+.card .frontCover {
+    transform: rotateY(90deg);
+    position: absolute;
+}
+.flipped .frontCover {
+    transform: rotateY(0deg);
 }
