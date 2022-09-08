@@ -1,3 +1,15 @@
+.container{
+box-sizing: border-box;
+position: relative;
+width: 842px;
+height: 844px;
+padding: 12px;
+background: linear-gradient(133.05deg, rgba(255, 255, 255, 0.6) 0.62%, rgba(255, 255, 255, 0.1) 102.4%);
+border-radius: 8px;
+margin-left: 80px;
+}
+
+
 .btn {
     display: block;
     width: 150px;
@@ -13,4 +25,34 @@
     display: grid;
     grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
     grid-gap: 19px;
+}
+.player1{
+  display: flex;
+flex-direction: column;
+align-items: center;
+position: absolute;
+width: 220px;
+height: 344px;
+left: 0px;
+top:350px;
+background: linear-gradient(160.65deg, rgba(255, 255, 255, 0.6) 0.74%, rgba(255, 255, 255, 0.1) 102.03%);
+border-radius: 8px;
+  
+}
+.player2{
+  display: flex;
+flex-direction: column;
+align-items: center;
+padding: 18px;
+
+position: absolute;
+width: 220px;
+height: 344px;
+right: 0px;
+top:350px;
+background: linear-gradient(160.65deg, rgba(255, 255, 255, 0.6) 0.74%, rgba(255, 255, 255, 0.1) 102.03%);
+border-radius: 8px;
+
+
+
 }

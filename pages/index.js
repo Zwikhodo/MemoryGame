@@ -1,25 +1,42 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import Link from 'next/link'
+import Head from "next/head";
+import Image from "next/image";
+import styles from "../styles/Home.module.css";
+import Link from "next/link";
+
 
 export default function Home() {
   return (
     <>
-    <Head>
-    <title>Memory</title>
-    </Head>
+      <Head>
+        <title>Memory | Home</title>
+      </Head>
 
-    <div>
-      <h1 className={styles.title}>Memory</h1>
-      <p>are you ready to play</p>
-      <div className={styles.avatarIcons}>
-        
-    </div>
-    <Link href="/game">
-        <a className={styles.btn} >New Game</a>
+      <div>
+        <h1 className={styles.title}>Are you ready to play?</h1>
+      </div>
+
+      <div>
+        <Image
+          className={styles.avatar1}
+          src="/log4.png"
+          width={200}
+          height={178}
+        />
+        <input className={styles.avatarInput} placeholder="Enter Player One's Name"/>
+        </div>
+        <div>
+        <Image
+          className={styles.avatar2}
+          src="/log2.png"
+          width={160}
+          height={148}
+        />
+        <input className={styles.avatarInput} placeholder="Enter Player Two's Name" />
+
+        <Link href="/game">
+          <a className={styles.btn}>Let's Play</a>
         </Link>
-    </div>
+      </div>
     </>
-  )
+  );
 }

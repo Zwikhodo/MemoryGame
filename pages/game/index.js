@@ -3,6 +3,7 @@ import Link from "next/link";
 import { GiCard10Clubs } from "react-icons/gi";
 import { useEffect, useState } from "react";
 import SingleCard from "../../Components/SingleCard";
+import Image from 'next/image';
 
 const flipCards = [
   { "src": "./cards/A.png","color": "Black","number": "1", matched: false },
@@ -111,19 +112,33 @@ const Game = () => {
   }
 
 
-
-
-//   const removeCard= () =>{
-//     setCard1(null)
-//     setCard2(null)
-
   return (
     <div className={styles.Game}>
       <button className={styles.btn} onClick={shuffleCards}>
         Restart Game
       </button>
-      <h1>Memory</h1>
-
+      <div className={styles.player1}>
+        <Image
+          className={styles.avatar1}
+          src="/log4.png"
+          width={200}
+          height={178}
+        />
+        <h2>Player 1</h2>
+        <h1>Score:</h1>
+        </div>
+        <div className={styles.player2}>
+        <Image
+          className={styles.avatar2}
+          src="/log2.png"
+          width={160}
+          height={148}
+        />
+        <h2>Player 2</h2>
+        <h1>Score:</h1>
+        </div>
+      
+    <div className={styles.container}>
       <div className={styles.cardGrid}>
         {cardsChosen.map((card) => (
           <SingleCard 
@@ -132,8 +147,10 @@ const Game = () => {
           handleChoice={handleChoice}
           flipped={card === card1 || card === card2 || card.matched}
           />
+          
         ))}
       </div>
+    </div>
     </div>
   );
 };

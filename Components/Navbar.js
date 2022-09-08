@@ -1,14 +1,19 @@
 import Link from 'next/link'
 import Image from 'next/image';
 
-const Navbar = () => {
+const Navbar = ({shuffleCards}) => {
     return (  
         <nav>
             <div className="logo">
-                <Image src="/logo2.png" width={200} height={78} />
+                <h1 >Memory</h1>
             </div>
-           <Link href="/"><a>Home</a></Link> 
-            <Link href="/about" ><a>About</a></Link>
+            <button className="exit_btn" >
+        Exit Game
+      </button>
+      <button className="btn"  onClick={shuffleCards}>
+        Restart Game
+      </button>
+            {/* <Link href="/about" ><a>About</a></Link> */}
 
         </nav>
     );

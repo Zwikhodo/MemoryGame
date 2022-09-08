@@ -8,7 +8,7 @@ const SingleCard = ({card, handleChoice, flipped}) => {
     return ( 
         
                 <div className={styles.card}>
-                    <div className={flipped ? "flipped" : "" }>
+                    <div className={{styles:flipped ? "flipped" : "" }}>
                         <img className={styles.frontCover} src={card.src} alt="card front" />
                         <img className={styles.backCover} src="./cards/Card_Back.png" onClick={handleClick} alt="card back"/>
                         </div>

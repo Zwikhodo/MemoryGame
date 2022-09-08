@@ -1,44 +1,40 @@
 import Head from "next/head";
+import Link from "next/link";
+import Image from 'next/image';
+import styles from "../styles/Layout.module.css";
 const About = () => {
   return (
-    <>
-      <Head>
-        <title>About</title>
-      </Head>
-      <div>
-        <h1>Review</h1>
-        <p>
-          Memory (also known as Concentration) is a card game played with one or
-          more players. Using a standard card deck (including both jokers) the
-          players shuffle the deck and lay all of the cards face down on a
-          surface and two cards are flipped face up over each turn. The
-          objective of the game is to turn over pairs of matching cards.{" "}
-        </p>
-      </div>
+    <div className={styles.title}>
 
-      <div>
-        <h1>How To Play</h1>
-        <p>
-          Any deck of playing cards may be used, although there are also
-          commercial sets of cards with images. The rules given here are for a
-          standard deck of 52 cards, which are normally laid face down in four
-          rows of 13 cards each.The two jokers may be included for a total of
-          six rows of nine cards each. Additional packs can be used for added
-          interest. Standard rules need not be followed: the cards can be spread
-          out anywhere, such as all around a room. In turn, each player chooses
-          two cards and turns them face up. If they are of the same rank and
-          color (e.g. six of hearts and six of diamonds, queen of clubs and
-          queen of spades, or both jokers, if used) then that player wins the
-          pair and plays again. If they are not of the same rank and color, they
-          are turned face down again and play passes to the player on the left.
-          Rules can be changed here too: it can be agreed before the game starts
-          that matching pairs be any two cards of the same rank, a color-match
-          being unnecessary, or that the match must be both rank and card suit.
-          The game ends when the last pair has been picked up. The winner is the
-          person with the most pairs. There may be a tie for first place.
-        </p>
-      </div>
-    </>
+      < h2>Well Done!</h2>
+      <h1>Player 1</h1>
+     <div className={styles.container}>
+      
+
+      <Image
+          className={styles.victory}
+          src="/done.png"
+          width={160}
+          height={148}
+        />
+        <div className={styles.scoreBoard1}>
+          we are trying
+          </div>
+        <div className={styles.scoreBoard2}>
+          we are trying also
+          </div>
+          <div className={styles.btn_container}>
+          <Link href="/">
+        <a className={styles.btn} >Play Again</a>
+        </Link>
+        
+        </div>
+        </div>
+    </div>
+
+     
+     
+     
   );
 };
 

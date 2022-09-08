@@ -1,7 +1,7 @@
 html,
 body {
    /* Created with https://www.css-gradient.com */
-  background: #6A8BED;
+  
   background: -webkit-linear-gradient(top left, #6A8BED, #B5F2FC);
   background: -moz-linear-gradient(top left, #6A8BED, #B5F2FC);
   background: linear-gradient(to bottom right, #6A8BED, #B5F2FC);
@@ -46,7 +46,10 @@ nav a {
   margin-left: 12px;
 }
 nav .logo {
-  margin-right: auto;
+  align-items: center;
+  position: relative;
+  font-size: x-large;
+  margin-right: 200px;
 }
 footer {
   display: block;
@@ -56,10 +59,23 @@ footer {
   color: #777;
   border-top: 1px solid #eaeaea;
 }
-.not-found{
+.exit_btn {
+  width: 100px;
+  border: none;
+  padding: 6px ;
+  margin: 4px;
+  background: #D4190C;
+  border-radius: 4px;
+  color: rgb(255, 255, 255);
   text-align: center;
 }
-.not-found a{
-  color: blue;
-  text-decoration: underline;
+.btn {
+  width: 100px;
+  border: none;
+  padding: 6px ;
+  margin: 4px;
+  background: #F4A236;
+  border-radius: 4px;
+  color: rgb(255, 255, 255);
+  text-align: center;
 }

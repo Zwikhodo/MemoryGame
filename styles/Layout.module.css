@@ -1,0 +1,58 @@
+.title{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+.container{
+    box-sizing: border-box;
+    position: relative;
+    width: 550px;
+    height: 500px;
+    padding: 12px;
+    border-radius: 8px;
+background-image: url(../public/confetti.png);
+
+}
+.victory{
+    display: grid;
+   justify-content: center;
+
+    
+
+}
+.scoreBoard1{
+    
+position: absolute;
+width: 535px;
+height: 100px;
+background:#FFFFFF;
+border-radius: 7px;
+bottom: 50px;
+
+
+}
+.scoreBoard2{
+    
+    width: 535px;
+    height: 101.37px;
+    background: linear-gradient(92.15deg, #FFD975 35.31%, #FFFFFF 135.61%);
+    border-radius: 7.8023px;
+ 
+    
+}
+.btn{
+padding: 20px;
+width: 164px;
+height: 56px;
+background: #A7DAFF;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+border-radius: 8px;
+font-size: large;
+
+}
+.btn_container{
+    top: 120px;
+}
+

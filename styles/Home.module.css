@@ -11,8 +11,24 @@
   width: 150px;
   padding: 8px 0;
   margin: 20px auto;
-  background: #4979ff;
+  background: #0AB169;
   border-radius: 4px;
-  color: white;
+  color: rgb(255, 255, 255);
   text-align: center;
+}
+
+/* .avatar1{
+  
+}
+
+.avatar2{
+
+} */
+.avatarInput{
+  margin: auto;
+    
+  padding: 5px;
+  border-radius: 6px;
+
+  
 }
