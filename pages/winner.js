@@ -16,6 +16,13 @@ const About = () => {
       />
       <div className={styles.scoreBoard1}>
         <div className={styles.firstPlace}>
+        <Image
+          className={styles.avatar1}
+          src="/log4.png"
+          width={98}
+          height={78}
+          objectFit="contain"
+        />
           <p>
             <strong>1st Place</strong>
           </p>{" "}
@@ -25,6 +32,13 @@ const About = () => {
       </div>
       <div className={styles.scoreBoard2}>
         <div className={styles.secondPlace}>
+        <Image
+          className={styles.avatar2}
+          src="/log2.png"
+          width={60}
+          height={48}
+          objectFit="contain"
+        />
           <p>
             <strong>2nd Place</strong>
           </p>{" "}
