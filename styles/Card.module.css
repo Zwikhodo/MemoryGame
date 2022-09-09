@@ -1,33 +1,30 @@
-
-
-.card{
-    position: relative;
+.card {
+  position: relative;
 }
 
 .card img {
-    width: 100%;
-    display:block;
-    border-radius: 1px;
-    border: 1px solid;
+  width: 100%;
+  display: block;
+  border-radius: 1px;
+  border: 1px solid;
 }
 
 .card .frontCover {
-    transform: rotateY(90deg);
-    position: absolute;
-    transition: all ease-in 0.2s;
+  transform: rotateY(90deg);
+  position: absolute;
+  transition: all ease-in 0.2s;
 }
 .flipped .frontCover {
-    transform: rotateY(0deg);
-    transition-delay:0.2s ;
-
+  transform: rotateY(0deg);
+  transition-delay: 0.2s;
 }
 
-.card .backCover{
-    transition: all ease-in 0.2s;
-    transition-delay: 0.2s;
+.card .backCover {
+  transition: all ease-in 0.2s;
+  transition-delay: 0.2s;
 }
 
-.flipped .backCover{
-    transform: rotateY(90deg);
-    transition-delay: 0s;
+.flipped .backCover {
+  transform: rotateY(90deg);
+  transition-delay: 0s;
 }

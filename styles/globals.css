@@ -1,26 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 html,
 body {
-   /* Created with https://www.css-gradient.com */
-  
-  background: -webkit-linear-gradient(top left, #6A8BED, #B5F2FC);
+  /* Created with https://www.css-gradient.com */
+
+  /* background: -webkit-linear-gradient(top left, #6A8BED, #B5F2FC);
   background: -moz-linear-gradient(top left, #6A8BED, #B5F2FC);
-  background: linear-gradient(to bottom right, #6A8BED, #B5F2FC);
-  color: #FFFF;
+  background: linear-gradient(to bottom right, #6A8BED, #B5F2FC); */
+  background-image: url(../public/bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #ffff;
   padding: 0;
-  height:100vh;
+  height: 100vh;
   margin: 0;
-  font-weight: 700px;
-font-size: 20px;font-family: 'Poppins';
-font-style: normal;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.18000000715255737px;
+  text-align: center;
+}
 
-  }
-
-  h3{
-    text-align: center;
-    font-weight: 700;
-font-size: 45px;font-family: 'Poppins';
-font-style: normal;
-  }
+h3 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 45px;
+  font-family: "Poppins";
+  font-style: normal;
+}
 
 a {
   color: inherit;
@@ -64,25 +72,26 @@ nav .logo {
 
 .exit_btn {
   border: none;
-  padding: 16px ;
-  background: #D4190C;
+  padding: 16px;
+  background: #d4190c;
   border-radius: 8px;
   color: rgb(255, 255, 255);
   text-align: center;
   font-weight: 700;
-font-size: 20px;font-family: 'Poppins';
-font-style: normal;
+  font-size: 20px;
+  font-family: "Poppins";
+  font-style: normal;
 }
 .btn {
-
   border: none;
-  padding: 16px ;
+  padding: 16px;
   margin-left: 4px;
-  background: #F4A236;
+  background: #f4a236;
   border-radius: 8px;
   color: rgb(255, 255, 255);
   text-align: center;
-  font-size: 20px;font-family: 'Poppins';
-font-style: normal;
-font-weight: 700;
+  font-size: 20px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
 }

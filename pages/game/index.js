@@ -106,7 +106,7 @@ const Game = () => {
 
         resetTurn();
       } else {
-        setTimeout(() => resetTurn(), 2000);
+        setTimeout(() => resetTurn(), 1000);
       }
     }
   }, [card1, card2]);
@@ -145,7 +145,7 @@ const Game = () => {
           src="/log4.png"
           width={200}
           height={178}
-          objectFit='contain'
+          objectFit="contain"
         />
         <h2>Player 1</h2>
         <h1>Score:{points}</h1>
@@ -156,7 +156,7 @@ const Game = () => {
           src="/log2.png"
           width={160}
           height={148}
-          objectFit='contain'
+          objectFit="contain"
         />
         <h2>Player 2</h2>
         <h1>Score:{points}</h1>
