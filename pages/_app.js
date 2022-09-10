@@ -3,7 +3,7 @@ import Layout from "../Components/Layout";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
-  const [users, setUser] = useState("");
+  
 
   return (
     <Layout>

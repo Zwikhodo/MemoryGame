@@ -2,11 +2,26 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
-import { useContext } from "react";
-import { UserContext } from "../Context/UserContext";
+import { useState } from "react";
+import { usePlayerStore } from "../store/players/players";
+
 
 export default function Home() {
-  // const { user, setUser } = useContext(UserContext);
+  const [ player1, setPlayer1 ] = useState('');
+  const [ player2, setPlayer2 ] = useState('');
+  const setPlayer1Name = usePlayerStore(((state)=>state.setPlayer1Name))
+  const setPlayer2Name = usePlayerStore(((state)=>state.setPlayer2Name))
+
+
+  function submit(){
+
+    var game={
+      player1:player1,
+      player2:player2
+    }
+
+    localStorage.setItem('games',JSON.stringify(game))
+  }
 
   return (
     <>
@@ -36,7 +51,10 @@ export default function Home() {
         />
         <input
           className={styles.avatarInput}
-          placeholder="Enter player One's Name"
+          type='text'
+          placeholder="Name of Player1"
+          
+          onChange={(e) =>{setPlayer1Name(e.target.value)}}
         />
 
         <Image
@@ -48,11 +66,14 @@ export default function Home() {
         />
         <input
           className={styles.avatarInput}
-          placeholder="Enter Player Two's Name"
+          type='text'
+          placeholder="Name of Player2"
+      
+          onChange={(e) =>{setPlayer2Name(e.target.value)}}
         />
       </div>
       <Link href="/game">
-        <a className={styles.btn}>Let's Play</a>
+        <a className={styles.btn} onClick={submit}>Let's Play</a>
       </Link>
     </>
   );
