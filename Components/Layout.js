@@ -1,14 +1,6 @@
-import { useMemo } from "react";
-import { useState } from "react";
+import styles from "../styles/Layout.module.css";
+const Layout = ({ children }) => {
+  return <div className={styles.content}>{children}</div>;
+};
 
-const Layout = ({children}) => {
-    
-    return (
-        <div className="content">
-            {children}
-            
-        </div>
-     );
-}
- 
 export default Layout;

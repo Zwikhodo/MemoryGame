@@ -2,10 +2,9 @@ import styles from "../styles/Card.module.css";
 
 const SingleCard = ({ card, handleChoice, flipped, inactive }) => {
   const handleClick = () => {
-    if (!inactive){
+    if (!inactive) {
       handleChoice(card);
     }
-    
   };
   return (
     <div className={styles.card}>

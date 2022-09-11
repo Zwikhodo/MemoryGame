@@ -1,11 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 html,
 body {
-  /* Created with https://www.css-gradient.com */
-
-  /* background: -webkit-linear-gradient(top left, #6A8BED, #B5F2FC);
-  background: -moz-linear-gradient(top left, #6A8BED, #B5F2FC);
-  background: linear-gradient(to bottom right, #6A8BED, #B5F2FC); */
   background-image: url(../public/bg.png);
   background-repeat: no-repeat;
   background-position: center;

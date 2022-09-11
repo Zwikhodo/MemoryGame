@@ -78,9 +78,6 @@ const Game = () => {
   const updateRunnerUp = usePlayerStore((state) => state.updateRunnerUp);
   const [p1Score, setP1Score] = useState(0);
   const [p2Score, setP2Score] = useState(0);
-  const setPlayer1Score = usePlayerStore((state) => state.setPlayer1Score);
-  const setPlayer2Score = usePlayerStore((state) => state.setPlayer2Score);
-
 
   const shuffleCards = () => {
     const shuffledCards = [...flipCards]
@@ -101,10 +98,6 @@ const Game = () => {
 
   useEffect(() => {
     if (card1 && card2) {
-
-      console.log('its working')
-      console.log(p1Score)
-      
       if (p1Score > 48) {
         const data = {
           playerName: playerOne.playerName,
@@ -112,19 +105,16 @@ const Game = () => {
         };
         updateWinner(data);
 
-        router.push('/winner')
+        router.push("/winner");
       }
-  
+
       if (p2Score > 48) {
-        
         const data = {
           playerName: playerTwo.playerName,
           score: p2Score,
         };
         updateRunnerUp(data);
-        router.push('/winner')
-        
-  
+        router.push("/winner");
       }
       setTurn(isPlayer1Turn ? false : true);
 
@@ -177,6 +167,7 @@ const Game = () => {
           width={200}
           height={178}
           objectFit="contain"
+          alt=""
         />
         <h2>{playerOne.playerName}</h2>
         <h1>Score:{p1Score}</h1>
@@ -193,6 +184,7 @@ const Game = () => {
           width={160}
           height={148}
           objectFit="contain"
+          alt=""
         />
         <h2>{playerTwo.playerName}</h2>
         <h1>Score:{p2Score}</h1>
