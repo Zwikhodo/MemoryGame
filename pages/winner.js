@@ -2,11 +2,22 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../styles/Layout.module.css";
-const About = () => {
+import { usePlayerStore } from "../store/players/players";
+
+const updateWinner = usePlayerStore((state) => state.updateWinner);
+const updateWinnerScore = usePlayerStore((state) => state.updateWinner);
+const updateRunnerUp = usePlayerStore((state) => state.updateWinner);
+const updateRunnerUpScore = usePlayerStore((state) => state.updateWinner);
+
+
+
+
+
+const WinnerPage = () => {
   return (
     <div className={styles.container}>
       <h2>Well Done!</h2>
-      <h1>Player 1</h1>
+      <h1>{winner.playerName}</h1>
       <Image
         className={styles.victory}
         src="/winner.png"
@@ -55,4 +66,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default WinnerPage;

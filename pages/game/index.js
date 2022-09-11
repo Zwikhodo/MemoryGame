@@ -67,37 +67,40 @@ const Game = () => {
   const [card1, setCard1] = useState(null);
   const [card2, setCard2] = useState(null);
   const [points, setPoints] = useState(0);
-  const [winner, setWinner] = useState("");
-  const [user, setUser] = useState(null);
   const [matched, setMatched] = useState({});
   const [isPlayer1Turn, setTurn] = useState(true);
   const [inactive, setInactive] = useState(false);
+  const [toggleModal, setToggleModal] = useState(true);
+
   // JSON.parse(localStorage.getItem("bestScore")) || Number.POSITIVE_INFINITY
-  const playerOne = usePlayerStore((state)=>state.player1)
-  const playerTwo = usePlayerStore((state)=>state.player2)
-  const updateWinner = usePlayerStore((state)=>state.updateWinner)
-  const [p1Score, setP1Score] = useState (0)
-  const [p2Score, setP2Score] = useState (0)
-  const setPlayer1Score = usePlayerStore((state)=>state.setPlayer1Score);
-  const setPlayer2Score = usePlayerStore((state)=>state.setPlayer2Score);
-  useEffect(()=>{
-    if(playerOne.score > 22){
+  const playerOne = usePlayerStore((state) => state.player1);
+  const playerTwo = usePlayerStore((state) => state.player2);
+  const updateWinner = usePlayerStore((state) => state.updateWinner);
+  const [p1Score, setP1Score] = useState(0);
+  const [p2Score, setP2Score] = useState(0);
+  const setPlayer1Score = usePlayerStore((state) => state.setPlayer1Score);
+  const setPlayer2Score = usePlayerStore((state) => state.setPlayer2Score);
+  useEffect(() => {
+    if (playerOne.score > 56) {
       const data = {
-        playerName : playerOne.playerName,
-        score : playerOne.score,
-      }
-      updateWinner(data)
-      //something here
+        playerName: playerOne.playerName,
+        score: playerOne.score,
+      };
+      updateWinner(data);
     }
-    if(playerTwo.score > 22){
+    
+    if (playerTwo.score > 56) {
       const data = {
-        playerName : playerTwo.playerName,
-        score : playerTwo.score,
-      }
-      updateWinner(data)
-      //something here
+        playerName: playerTwo.playerName,
+        score: playerTwo.score,
+      };
+      updateWinner(data);
+
+      
     }
-  },[playerOne,playerTwo])
+  }, [playerOne, playerTwo]);
+  console.log()
+
 
   const shuffleCards = () => {
     const shuffledCards = [...flipCards]
@@ -108,8 +111,10 @@ const Game = () => {
     setCard2(null);
     setCardsChosen(shuffledCards);
     setPoints(0);
+    setP1Score(0);
+    setP2Score(0);
+
   };
-  
 
   const handleChoice = (card) => {
     card1 ? setCard2(card) : setCard1(card);
@@ -119,17 +124,16 @@ const Game = () => {
     if (card1 && card2) {
       setInactive(true);
       if (card1.color === card2.color && card1.number === card2.number) {
-
         setCardsChosen((prevCards) => {
           return prevCards.map((card) => {
             if (card.color === card1.color && card.number === card1.number) {
-              if(isPlayer1Turn){
-                setP1Score((e)=>e+1)
+              if (isPlayer1Turn) {
+                setP1Score((e) => e + 1);
                 setTurn(false);
-              }else{
-                setTurn(true)
-                setP2Score((e)=>e+1)
-                console.log(playerTwo.score)
+              } else {
+                setTurn(true);
+                setP2Score((e) => e + 1);
+                
               }
               return { ...card, matched: true };
             } else {
@@ -137,7 +141,6 @@ const Game = () => {
             }
           });
         });
-        
 
         resetTurn();
       } else {
@@ -145,17 +148,7 @@ const Game = () => {
       }
     }
   }, [card1, card2]);
-  
 
-  // useEffect(() => {
-  //   let timeout = null;
-  //   if (matched.length === 2) {
-  //     timeout = setTimeout(evaluate, 300);
-  //   }
-  //   return () => {
-  //     clearTimeout(timeout);
-  //   };
-  // }, [matched]);
   const resetTurn = () => {
     setCard1(null);
     setCard2(null);
@@ -186,8 +179,9 @@ const Game = () => {
         <h2>{playerOne.playerName}</h2>
         <h1>Score:{p1Score}</h1>
       </div>
-      {/* <div className={styles.turnModal1}><h2>its your turn</h2>
-      </div> */}
+      <div className={styles.turnModal1 }>
+        <h2>its your turn</h2>
+      </div>
       <div className={styles.player2}>
         <Image
           className={styles.avatar2}
@@ -199,7 +193,9 @@ const Game = () => {
         <h2>{playerTwo.playerName}</h2>
         <h1>Score:{p2Score}</h1>
       </div>
-      {/* <div className={styles.turnModal2}><h2>its your turn</h2></div> */}
+      <div className={styles.turnModal2 }>
+        <h2>its your turn</h2>
+      </div>
       <div className={styles.container}>
         <div className={styles.cardGrid}>
           {cardsChosen.map((card) => (
@@ -209,6 +205,7 @@ const Game = () => {
               handleChoice={handleChoice}
               flipped={card === card1 || card === card2 || card.matched}
               inactive={inactive}
+              toggleModal1={card.matched}
             />
           ))}
         </div>
