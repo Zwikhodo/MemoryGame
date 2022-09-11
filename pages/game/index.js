@@ -1,5 +1,6 @@
 import styles from "../../styles/Game.module.css";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import SingleCard from "../../Components/SingleCard";
 import Image from "next/image";
@@ -63,43 +64,22 @@ const flipCards = [
 ];
 
 const Game = () => {
+  const router = useRouter();
+
   const [cardsChosen, setCardsChosen] = useState([]);
   const [card1, setCard1] = useState(null);
   const [card2, setCard2] = useState(null);
   const [points, setPoints] = useState(0);
-  const [matched, setMatched] = useState({});
-  const [isPlayer1Turn, setTurn] = useState(true);
+  const [isPlayer1Turn, setTurn] = useState(false);
   const [inactive, setInactive] = useState(false);
-  const [toggleModal, setToggleModal] = useState(true);
-
-  // JSON.parse(localStorage.getItem("bestScore")) || Number.POSITIVE_INFINITY
   const playerOne = usePlayerStore((state) => state.player1);
   const playerTwo = usePlayerStore((state) => state.player2);
   const updateWinner = usePlayerStore((state) => state.updateWinner);
+  const updateRunnerUp = usePlayerStore((state) => state.updateRunnerUp);
   const [p1Score, setP1Score] = useState(0);
   const [p2Score, setP2Score] = useState(0);
   const setPlayer1Score = usePlayerStore((state) => state.setPlayer1Score);
   const setPlayer2Score = usePlayerStore((state) => state.setPlayer2Score);
-  useEffect(() => {
-    if (playerOne.score > 56) {
-      const data = {
-        playerName: playerOne.playerName,
-        score: playerOne.score,
-      };
-      updateWinner(data);
-    }
-    
-    if (playerTwo.score > 56) {
-      const data = {
-        playerName: playerTwo.playerName,
-        score: playerTwo.score,
-      };
-      updateWinner(data);
-
-      
-    }
-  }, [playerOne, playerTwo]);
-  console.log()
 
 
   const shuffleCards = () => {
@@ -113,7 +93,6 @@ const Game = () => {
     setPoints(0);
     setP1Score(0);
     setP2Score(0);
-
   };
 
   const handleChoice = (card) => {
@@ -122,6 +101,33 @@ const Game = () => {
 
   useEffect(() => {
     if (card1 && card2) {
+
+      console.log('its working')
+      console.log(p1Score)
+      
+      if (p1Score > 48) {
+        const data = {
+          playerName: playerOne.playerName,
+          score: p1Score,
+        };
+        updateWinner(data);
+
+        router.push('/winner')
+      }
+  
+      if (p2Score > 48) {
+        
+        const data = {
+          playerName: playerTwo.playerName,
+          score: p2Score,
+        };
+        updateRunnerUp(data);
+        router.push('/winner')
+        
+  
+      }
+      setTurn(isPlayer1Turn ? false : true);
+
       setInactive(true);
       if (card1.color === card2.color && card1.number === card2.number) {
         setCardsChosen((prevCards) => {
@@ -129,11 +135,8 @@ const Game = () => {
             if (card.color === card1.color && card.number === card1.number) {
               if (isPlayer1Turn) {
                 setP1Score((e) => e + 1);
-                setTurn(false);
               } else {
-                setTurn(true);
                 setP2Score((e) => e + 1);
-                
               }
               return { ...card, matched: true };
             } else {
@@ -152,7 +155,6 @@ const Game = () => {
   const resetTurn = () => {
     setCard1(null);
     setCard2(null);
-    setTurn();
     setInactive(false);
   };
   useEffect(() => {
@@ -179,9 +181,11 @@ const Game = () => {
         <h2>{playerOne.playerName}</h2>
         <h1>Score:{p1Score}</h1>
       </div>
-      <div className={styles.turnModal1 }>
+
+      <div className={!isPlayer1Turn ? styles.hide : styles.turnModal1}>
         <h2>its your turn</h2>
       </div>
+
       <div className={styles.player2}>
         <Image
           className={styles.avatar2}
@@ -193,7 +197,7 @@ const Game = () => {
         <h2>{playerTwo.playerName}</h2>
         <h1>Score:{p2Score}</h1>
       </div>
-      <div className={styles.turnModal2 }>
+      <div className={!isPlayer1Turn ? styles.turnModal2 : styles.hide}>
         <h2>its your turn</h2>
       </div>
       <div className={styles.container}>
@@ -205,7 +209,6 @@ const Game = () => {
               handleChoice={handleChoice}
               flipped={card === card1 || card === card2 || card.matched}
               inactive={inactive}
-              toggleModal1={card.matched}
             />
           ))}
         </div>

@@ -110,7 +110,10 @@ top: 710px;
 background: #0AB169;
 border-radius: 8px;
 
+
 }
+
+
 
 .turnModal2{
   display: flex;
@@ -125,4 +128,8 @@ right: 129px;
 top: 710px;
 background: #FFFFFF;
 border-radius: 8px;
+}
+
+.hide{
+  display: none;
 }

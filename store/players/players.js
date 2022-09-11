@@ -19,19 +19,12 @@ export const usePlayerStore = create((set) => ({
   },
   updateWinner: (value) =>
     set((state) => ({
-      winner: { ...state.winner, playerName: value },
+      winner: value
+
     })),
   updateRunnerUp: (value) =>
     set((state) => ({
-      runnerUp: { ...state.runnerUp, playerName: value },
-    })),
-  updateWinnerScore: (value) =>
-    set((state) => ({
-      winnerScore: { ...state.winnerScore, score: value },
-    })),
-  updateRunnerUpScore: (value) =>
-    set((state) => ({
-      runnerUpScore: { ...state.runnerUpScore, score: value },
+      runnerUp: value,
     })),
   setPlayer1Name: (value) =>
     set((state) => ({

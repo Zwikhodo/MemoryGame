@@ -4,16 +4,20 @@ import Image from "next/image";
 import styles from "../styles/Layout.module.css";
 import { usePlayerStore } from "../store/players/players";
 
-const updateWinner = usePlayerStore((state) => state.updateWinner);
-const updateWinnerScore = usePlayerStore((state) => state.updateWinner);
-const updateRunnerUp = usePlayerStore((state) => state.updateWinner);
-const updateRunnerUpScore = usePlayerStore((state) => state.updateWinner);
+// const updateWinner = usePlayerStore((state) => state.updateWinner);
+// const updateWinnerScore = usePlayerStore((state) => state.updateWinner);
+// const updateRunnerUp = usePlayerStore((state) => state.updateWinner);
+// const updateRunnerUpScore = usePlayerStore((state) => state.updateWinner);
+
 
 
 
 
 
 const WinnerPage = () => {
+
+  const winner = usePlayerStore((state)=>state.winner);
+  const runnerUp = usePlayerStore((state)=>state.runnerUp);
   return (
     <div className={styles.container}>
       <h2>Well Done!</h2>
@@ -36,9 +40,9 @@ const WinnerPage = () => {
         />
           <p>
             <strong>1st Place</strong>
-          </p>{" "}
-          <p>Player1</p>
-          <p>Score:</p>
+          </p>
+          <p>{winner.playerName}</p>
+          <p>Score:{winner.score}</p>
         </div>
       </div>
       <div className={styles.scoreBoard2}>
@@ -52,9 +56,9 @@ const WinnerPage = () => {
         />
           <p>
             <strong>2nd Place</strong>
-          </p>{" "}
-          <p>Player2</p>
-          <p>Score:</p>
+          </p>
+          <p>{runnerUp.playerName}</p>
+          <p>Score:{runnerUp.score}</p>
         </div>
       </div>
       <div className={styles.btn_container}>

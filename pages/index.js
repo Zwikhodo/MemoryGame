@@ -53,7 +53,7 @@ export default function Home() {
           className={styles.avatarInput}
           type='text'
           placeholder="Name of Player1"
-          
+          required
           onChange={(e) =>{setPlayer1Name(e.target.value)}}
         />
 
@@ -68,7 +68,7 @@ export default function Home() {
           className={styles.avatarInput}
           type='text'
           placeholder="Name of Player2"
-      
+          required
           onChange={(e) =>{setPlayer2Name(e.target.value)}}
         />
       </div>
