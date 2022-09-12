@@ -106,6 +106,12 @@ const Game = () => {
         updateWinner(data);
 
         router.push("/winner");
+      }else{
+        const data = {
+          playerName: playerOne.playerName,
+          score: p1Score,
+        };
+        updateRunnerUp(data)
       }
 
       if (p2Score > 48) {
@@ -113,8 +119,14 @@ const Game = () => {
           playerName: playerTwo.playerName,
           score: p2Score,
         };
-        updateRunnerUp(data);
+        updateWinner(data);
         router.push("/winner");
+      }else{
+        const data = {
+          playerName: playerTwo.playerName,
+          score: p2Score,
+        }
+        updateRunnerUp(data)
       }
       setTurn(isPlayer1Turn ? false : true);
 

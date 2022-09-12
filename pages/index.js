@@ -6,19 +6,8 @@ import { useState } from "react";
 import { usePlayerStore } from "../store/players/players";
 
 export default function Home() {
-  const [player1, setPlayer1] = useState("");
-  const [player2, setPlayer2] = useState("");
   const setPlayer1Name = usePlayerStore((state) => state.setPlayer1Name);
   const setPlayer2Name = usePlayerStore((state) => state.setPlayer2Name);
-
-  function submit() {
-    var game = {
-      player1: player1,
-      player2: player2,
-    };
-
-    localStorage.setItem("games", JSON.stringify(game));
-  }
 
   return (
     <>
@@ -72,7 +61,7 @@ export default function Home() {
         />
       </div>
       <Link href="/game">
-        <a className={styles.btn} onClick={submit}>
+        <a className={styles.btn}>
           Let's Play
         </a>
       </Link>
